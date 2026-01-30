@@ -9,21 +9,28 @@ export class Vendas {
 
   constructor(private http: HttpClient){}
 
-  
- operacao(dados:any){  // Saída para o primeiro end-point
- return this.http.post(this.url, dados);
-}
+ // Saída para o primeiro end-point
 
-// Exemplo de como consumir a api com arquivos separados.
+ operacao(dados:any){  
+  return this.http.post(this.url + '/api.php', dados);
+ } 
 
-// listarPorduto(dados:any){
-//  return this.http.post(this.url + 'api-produtos', dados);
-// }
+ // Exemplo de como consumir a api com arquivos separados.
 
-// Exemplo de como consumir a api com arquivos separados.
+ //  operacao(dados:any){  
+ //  return this.http.post(this.url, dados);
+ // }
 
-// listarAlterar(dados:any){  
-//  return this.http.post(this.url + 'api-produtos/{id}', dados);
-// }
+ // Exemplo de como consumir a api com arquivos separados.
+
+ // listarPorduto(dados:any){
+ //  return this.http.post(this.url + 'api-produtos', dados);
+ // }
+
+ // Exemplo de como consumir a api com arquivos separados.
+
+ // listarAlterar(dados:any){  
+ //  return this.http.post(this.url + 'api-produtos/{id}', dados);
+ // }
 
 }
