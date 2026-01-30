@@ -16,8 +16,7 @@ export class HomePage {
   constructor(private api: Vendas){}
 
   ngOnInit(){
-    this.Listar();
-    console.log(this.pedido);
+
   }
 
   // Listar pedidos
@@ -31,6 +30,8 @@ export class HomePage {
     const resposta: any = await lastValueFrom(this.api.operacao(pedidosListar));
     this.mensagem = resposta.msg;
     this.pedido = resposta.data[0];
+
+    console.log(this.pedido);
 
   }
 
