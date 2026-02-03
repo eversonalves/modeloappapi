@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Novo Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    
+  </ion-card>
+  <form [formGroup]="form" (ngSubmit)="salvarCliente()">
+
+    <!-- Campo nome -->
+
+    <ion-item>
+      <ion-label position="floating"> Nome </ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
+
+    <!-- Campo cpf -->
+
+    <ion-item>
+      <ion-label position="floating"> CPF </ion-label>
+      <ion-input type="number" formControlName="cpf"></ion-input>
+    </ion-item>
+
+    <!-- Campo telefone -->
+
+    <ion-item>
+      <ion-label position="floating"> Telefone </ion-label>
+      <ion-input type="tel" formControlName="telefone"></ion-input>
+    </ion-item>
+
+    <!-- Campo email -->
+
+    <ion-item>
+      <ion-label position="floating"> E-mail </ion-label>
+      <ion-input type="email" formControlName="email"></ion-input>
+    </ion-item>
+
+    <!-- Campo data -->
+
+    <ion-item>
+      <ion-label position="floating"> Data de Nascimento </ion-label>
+      <ion-input type="date" formControlName="datanasc"></ion-input>
+    </ion-item>
+
+    <!-- Botão cadastrar -->
+
+    <ion-button class="ion-padding" expand="block" type="submit" [disabled]="form.invalid" color="success">
+      Cadastrar
+    </ion-button>
+
+  </form>
+</ion-content>
