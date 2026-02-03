@@ -23,7 +23,6 @@ export class UsuarioListPage implements OnInit {
 
   ionViewWillEnter(){
     this.listar();
-    console.log(this.usuarios);
   }
 
   listar(id:number=0){
