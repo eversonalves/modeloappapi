@@ -28,7 +28,7 @@ export class UsuarioAddPage implements OnInit {
     });
   }
 
-  salvarUsuario(){
+  salvar(){
     const request = {
       requisicao: 'usuario-add',
       ...this.form.value

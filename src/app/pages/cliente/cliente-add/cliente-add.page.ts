@@ -29,7 +29,7 @@ export class ClienteAddPage implements OnInit {
     });
   }
 
-  salvarCliente(){
+  salvar(){
     const request = {
       requisicao: 'cliente-add',
       ...this.form.value
