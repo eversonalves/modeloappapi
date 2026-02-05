@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ProdutoListPageRoutingModule } from './produto-list-routing.module';
+import { ClienteEditPageRoutingModule } from './cliente-edit-routing.module';
 
-import { ProdutoListPage } from './produto-list.page';
+import { ClienteEditPage } from './cliente-edit.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ProdutoListPageRoutingModule,
+    ClienteEditPageRoutingModule,
     ReactiveFormsModule
   ],
-  declarations: [ProdutoListPage]
+  declarations: [ClienteEditPage]
 })
-export class ProdutoListPageModule {}
+export class ClienteEditPageModule {}

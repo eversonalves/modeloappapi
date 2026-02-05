@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Lista de Clientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- Lista de usuários -->
+
+  <ion-item *ngFor="let c of clientes" (click)="editar(c.id)">
+    <ion-label>
+      <h2>{{c.nome}}</h2>
+      <p>{{c.email}} | Nascimento: {{c.data_nasc}}</p>
+    </ion-label>
+    <ion-badge color="success" *ngIf="c.ativo == 1"> Ativo </ion-badge>
+    <ion-badge color="medium" *ngIf="c.ativo == 0"> Inativo </ion-badge>
+  </ion-item>
+</ion-content>
