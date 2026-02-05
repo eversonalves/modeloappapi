@@ -5,25 +5,29 @@ import { Vendas } from './vendas';
   providedIn: 'root',
 })
 export class Auth {
+  constructor(private api: Vendas) {}
 
-  constructor (private api: Vendas){}
-
-  login(email: string, senha: string){
+  login(email: string, senha: string) {
     return this.api.operacao({
       requisicao: 'login',
-      email: email,
-      senha: senha
+      email,
+      senha
     });
   }
 
-  logout(){}
-
-  setUsuario(){}
-
-  getUsuario(){}
-
-  isLogado():boolean{
-    return true;
+  logout() {
+    localStorage.removeItem('usuario');
   }
-  
+
+  setUsuario(dados: any) {
+    localStorage.setItem('usuario', JSON.stringify(dados));
+  }
+
+  getUsuario() {
+    return JSON.parse(localStorage.getItem('usuario') || 'null');
+  }
+
+  isLogado(): boolean {
+    return !!this.getUsuario();
+  }
 }

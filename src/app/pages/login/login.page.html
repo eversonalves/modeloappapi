@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <form [formGroup]="form" (ngSubmit)="logar()">
+
+  <!-- Campo e-mail -->
+  <ion-item>
+    <ion-label position="floating"> E-mail </ion-label>
+    <ion-input formControlName="usuario"></ion-input>
+  </ion-item>
+
+  <!-- Campo senha -->
+
+  <ion-item>
+    <ion-label position="floating"> Senha </ion-label>
+    <ion-input type="password" formControlName="senha"></ion-input>
+  </ion-item>
+
+  <!-- Botão entrar -->
+
+  <ion-button class="ion-padding" (click)="logar()" expand="block" color="primary" type="submit" [disabled]="form.invalid">
+    Logar
+  </ion-button>
+  
+</form>
+</ion-content>
