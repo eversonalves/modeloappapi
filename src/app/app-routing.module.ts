@@ -48,16 +48,38 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'cliente-edit',
+    path: 'cliente-edit/:id',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./pages/cliente/cliente-edit/cliente-edit.module').then( m => m.ClienteEditPageModule)
   },
   {
     path: 'cliente-list',
+    canActivate:[AuthGuard],
     loadChildren: () => import('./pages/cliente/cliente-list/cliente-list.module').then( m => m.ClienteListPageModule)
   },
   {
     path: 'splash',
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
+  },
+  {
+    path: 'endereco-add',
+    canActivate:[AuthGuard],
+    loadChildren: () => import('./pages/endereco/endereco-add/endereco-add.module').then( m => m.EnderecoAddPageModule)
+  },
+  {
+    path: 'endereco-edit',
+    canActivate:[AuthGuard],
+    loadChildren: () => import('./pages/endereco/endereco-edit/endereco-edit.module').then( m => m.EnderecoEditPageModule)
+  },
+  {
+    path: 'endereco-list',
+    canActivate:[AuthGuard],
+    loadChildren: () => import('./pages/endereco/endereco-list/endereco-list.module').then( m => m.EnderecoListPageModule)
+  },
+  {
+    path: 'produto-edit',
+    canActivate:[AuthGuard],
+    loadChildren: () => import('./pages/produto/produto-edit/produto-edit.module').then( m => m.ProdutoEditPageModule)
   },
 ];
 
