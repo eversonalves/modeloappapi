@@ -1,3 +1,4 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   standalone: false
 })
 export class EnderecoEditPage implements OnInit {
+
+  form! : FormGroup;
 
   constructor() { }
 
