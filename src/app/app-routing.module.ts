@@ -10,7 +10,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'splash',
     pathMatch: 'full'
   },
   {
@@ -54,6 +54,10 @@ const routes: Routes = [
   {
     path: 'cliente-list',
     loadChildren: () => import('./pages/cliente/cliente-list/cliente-list.module').then( m => m.ClienteListPageModule)
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule)
   },
 ];
 
