@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
 import { Vendas } from 'src/app/services/vendas';
 
@@ -9,25 +10,27 @@ import { Vendas } from 'src/app/services/vendas';
   standalone: false,
 })
 export class ProdutoListPage implements OnInit {
-  pedido: any = null;
-  mensagem = '';
+  produtos: any [] = [];
 
-  constructor(private api: Vendas) {}
+  constructor(
+    private api: Vendas,
+    private router: Router
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.Listar();
+    console.log(this.produtos);
+  }
 
-  // Listar pedidos
+  Listar() {
+    this.api.operacao({requisicao:'produto-listar'}).subscribe((res:any)=>{
+      if(res.success){
+        this.produtos = res.data;
+      }
+    });
+  }
 
-  async Listar() {
-    const pedidosListar = {
-      requisicao: 'pedido-listar',
-      id_pedido: 100050,
-    };
-
-    const resposta: any = await lastValueFrom(this.api.operacao(pedidosListar));
-    this.mensagem = resposta.msg;
-    this.pedido = resposta.data[0];
-
-    console.log(this.pedido);
+  abrir(id:number){
+    this.router.navigate(['/produto-detalhe', id]);
   }
 }

@@ -1,26 +1,16 @@
 <ion-header [translucent]="false">
   <ion-toolbar>
-    <ion-title class="ion-text-center"> Lista de Pedido </ion-title>
+    <ion-title class="ion-text-center"> Lista de Produtos </ion-title>
+      <ion-buttons slot="start">
+        <ion-back-button><ion-icon name="arrow-back-sharp"></ion-icon></ion-back-button>
+      </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="container">
-    <ion-card *ngIf="pedido">
-      <ion-card-header>
-        <ion-card-title> Pedido #100050 </ion-card-title>
-        <ion-card-subtitle> Dados </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content>
-        <p><strong> Usuário: </strong> {{pedido.usuario_id}}</p>
-        <p><strong> Cliente: </strong> {{pedido.cliente_id}}</p>
-        <p><strong> Data: </strong> {{pedido.data}}</p>
-        <p><strong> Status: </strong> {{pedido.status}}</p>
-        <p><strong> Desconto: </strong> {{pedido.desconto}}</p>
-      </ion-card-content>
-    </ion-card>
-    <div>
-      <ion-button color="medium" expand="" (click)="Listar()">Listar Pedidos</ion-button>
-    </div>
-  </div>
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-label></ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
