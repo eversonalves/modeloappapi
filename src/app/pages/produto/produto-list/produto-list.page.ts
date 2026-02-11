@@ -18,11 +18,11 @@ export class ProdutoListPage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.Listar();
+    this.listar();
     console.log(this.produtos);
   }
 
-  Listar() {
+  listar() {
     this.api.operacao({requisicao:'produto-listar'}).subscribe((res:any)=>{
       if(res.success){
         this.produtos = res.data;

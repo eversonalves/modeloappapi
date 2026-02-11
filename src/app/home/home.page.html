@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
     <ion-toolbar>
-        <ion-title>
+        <ion-title class="ion-text-center">
             Sistema Comercial
         </ion-title>
         <ion-buttons slot="end">
@@ -11,7 +11,7 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" [fullscreen]="true">
     <ion-list>
         <ion-item routerLink="/cliente-add"> Cadastrar Clientes </ion-item>
         <ion-item routerLink="/cliente-list"> Listar Clientes </ion-item>

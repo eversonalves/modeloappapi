@@ -1,13 +1,13 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Editar Cliente</ion-title>
+    <ion-title class="ion-text-center">Editar Cliente</ion-title>
       <ion-buttons slot="start">
         <ion-back-button><ion-icon name="arrow-back-sharp"></ion-icon></ion-back-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" [fullscreen]="true">
   <form [formGroup]="form" (ngSubmit)="salvar()">
 
     <!-- Campo nome -->

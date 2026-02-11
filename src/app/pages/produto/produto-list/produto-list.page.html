@@ -1,4 +1,4 @@
-<ion-header [translucent]="false">
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center"> Lista de Produtos </ion-title>
       <ion-buttons slot="start">
@@ -9,8 +9,11 @@
 
 <ion-content [fullscreen]="true">
   <ion-list>
-    <ion-item>
-      <ion-label></ion-label>
+    <ion-item *ngFor="let p of produtos" (click)="abrir(p.id)">
+      <ion-label>
+        <h2>{{p.descricao}}</h2>
+        <p>Categorai: <strong>{{p.categoria}}</strong> | R$ <strong> {{p.valor_unit}} </strong> | Estoque: <strong>{{p.quantidade}}</strong> </p>
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
