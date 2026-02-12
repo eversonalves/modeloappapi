@@ -46,5 +46,4 @@ export class ProdutoDetalhePage implements OnInit {
       }
     });
   }
-
 }

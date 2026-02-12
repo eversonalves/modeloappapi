@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { lastValueFrom } from 'rxjs';
 import { Vendas } from 'src/app/services/vendas';
 
 @Component({
