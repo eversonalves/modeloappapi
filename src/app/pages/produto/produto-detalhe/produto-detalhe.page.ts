@@ -1,5 +1,6 @@
+import { compileDeclareClassMetadata } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 import { Vendas } from 'src/app/services/vendas';
@@ -27,8 +28,31 @@ export class ProdutoDetalhePage implements OnInit {
 
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.listaCategorias();
     this.buscarProduto(this.id);
+
+    this.form = this.formBuilder.group({
+      cod_barras: [''],
+      descricao: ['', [Validators.required]],
+      valor_unit: [0, Validators.required],
+      unidade_venda: [''],
+      categoria_id: [0],
+      estoque_minimo: [0],
+      classe_desconto: [0],
+      image: [''],
+      quantidade: [0],
+      data_ultimo_movimento: ['']
+    });
+    this.carregar();
+  }
+
+  carregar(){
+    this.api.operacao({requisicao:'produto-listar', id: this.id}).subscribe((res:any)=>{
+      if(res.success){
+        this.form.patchValue(res.data);
+      }
+    });
   }
 
   listaCategorias(){
