@@ -1,64 +1,66 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">Detalhes do Produto</ion-title>
-      <ion-buttons slot="start">
-        <ion-back-button><ion-icon name="arrow-back-sharp"></ion-icon></ion-back-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button
+        ><ion-icon name="arrow-back-sharp"></ion-icon
+      ></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
   <form [formGroup]="form">
+    <!-- Campo código de barras -->
 
     <ion-item>
       <ion-label position="floating"> Codigo de Barras </ion-label>
       <ion-input formControlName="cod_barras"></ion-input>
     </ion-item>
 
+    <!-- Campo Descrição -->
+
     <ion-item>
       <ion-label position="floating"> Descrição </ion-label>
       <ion-input formControlName="descricao"></ion-input>
     </ion-item>
 
+    <!-- Campo Valor unitário -->
+
     <ion-item>
-      <ion-label position="floating"> Valor Unitario </ion-label>
+      <ion-label position="floating"> Valor Unitário </ion-label>
       <ion-input formControlName="valor_unit"></ion-input>
     </ion-item>
 
+    <!-- Campo Unidade de venda -->
+
     <ion-item>
-      <ion-label position="floating"> Únidade de Venda </ion-label>
+      <ion-label position="floating"> Unidade de Venda </ion-label>
       <ion-input formControlName="unidade_venda"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label position="floating"> Categoria </ion-label>
-      <ion-input formControlName="categoria_id"></ion-input>
-    </ion-item>
+    <!-- Campo Quantidade do estoque -->
 
     <ion-item>
-      <ion-label position="floating"> Estoque minimo </ion-label>
-      <ion-input formControlName="estoque_minimo"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating"> Classe de Desconto  </ion-label>
-      <ion-input formControlName="classe_desconto"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating"> Imagem  </ion-label>
-      <ion-input formControlName="image"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating"> Quantidade  </ion-label>
+      <ion-label position="floating"> Quantidade em Estoque </ion-label>
       <ion-input formControlName="quantidade"></ion-input>
     </ion-item>
 
+    <!-- Campo Ultimo movimento -->
+
     <ion-item>
-      <ion-label position="floating"> Ultimo Movimento  </ion-label>
+      <ion-label position="floating"> Ultimo Movimento </ion-label>
       <ion-input formControlName="data_ultimo_movimento"></ion-input>
     </ion-item>
+
+    <!-- Campo Botões -->
+
+    <div style="display: flex; justify-content: space-between; width: 100%; padding: 10px;">
+
+      <ion-button color="warning"> Editar </ion-button>
+      <ion-button color="danger"> Excluir </ion-button>
+      
+    </div>
 
   </form>
 </ion-content>
