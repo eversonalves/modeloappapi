@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class Vendas {
-  private url = "http://sh00196.teste.website/~well7877/modelo-api";
+  private url = "https://sublimegrace.com.br/modelo-api";
 
   constructor(private http: HttpClient){}
 
@@ -13,13 +13,20 @@ export class Vendas {
 
  operacao(dados:any){  
   return this.http.post(this.url + '/api.php', dados);
- } 
+ }
 
- // Exemplo de como consumir a api com arquivos separados.
 
- //  operacao(dados:any){  
- //  return this.http.post(this.url, dados);
- // }
+ // Upload de imagem.
+
+  uploadImagem(idProduto: number, arquivo: File){  
+    const formData = new FormData();
+    formData.append('requisicao','produto-upload-imagem');
+    formData.append('id_produto', idProduto.toString());
+    formData.append('imagem', arquivo)
+
+    return this.http.post(this.url + '/api-php', formData);
+
+  } 
 
  // Exemplo de como consumir a api com arquivos separados.
 
