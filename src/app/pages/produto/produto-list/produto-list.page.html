@@ -12,11 +12,11 @@
     <ion-item *ngFor="let p of produtos">
 
       <ion-thumbnail *ngIf="p.imagem" slot="start" (click)="abrirImagem(p.id)">
-        <img [src]="'https:/sublimegrace.com.br/modelo-api/' + p.imagem">
+        <img [src]="'https://sublimegrace.com.br/modelo-api/' + p.imagem">
       </ion-thumbnail>
 
       <ion-thumbnail *ngIf="!p.imagem" slot="start" (click)="abrirImagem(p.id)">
-        <img [src]="'https:/sublimegrace.com.br/modelo-api/upload/sem_imagem.jpg'">
+        <img [src]="'https://sublimegrace.com.br/modelo-api/upload/sem_imagem.jpg'">
       </ion-thumbnail>
 
       <ion-label  (click)="abrirDetalhes(p.id)">
