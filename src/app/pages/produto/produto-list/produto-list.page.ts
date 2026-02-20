@@ -28,7 +28,12 @@ export class ProdutoListPage implements OnInit {
     });
   }
 
-  abrir(id:number){
+  abrirDetalhes(id:number){
     this.router.navigate(['/produto-detalhe', id]);
   }
+
+  abrirImagem(id:number){
+    this.router.navigate(['/produto-imagem', id]);
+  }
+  
 }
