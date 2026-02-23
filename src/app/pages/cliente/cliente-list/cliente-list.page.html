@@ -8,8 +8,11 @@
 </ion-header>
 
 <ion-content class="ion-padding" [fullscreen]="true">
-  <!-- Lista de usuários -->
 
+  <!-- Barra de pesguisa -->
+  <ion-searchbar placeholder="Buscar" [debounce]="500" (ionInput)="($event)"></ion-searchbar>
+
+  <!-- Lista de usuários -->
   <ion-item *ngFor="let c of clientes" (click)="editar(c.id)">
     <ion-label>
       <h2>{{c.nome}}</h2>
@@ -18,4 +21,5 @@
     <ion-badge color="success" *ngIf="c.ativo == 1"> Ativo </ion-badge>
     <ion-badge color="medium" *ngIf="c.ativo == 0"> Inativo </ion-badge>
   </ion-item>
+
 </ion-content>

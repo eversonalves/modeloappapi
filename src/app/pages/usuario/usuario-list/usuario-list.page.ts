@@ -11,6 +11,9 @@ import { Vendas } from 'src/app/services/vendas';
 export class UsuarioListPage implements OnInit {
 
   usuarios : any [] = [];
+  start: number = 0;
+  limit: number = 20;
+  palavra: any;
 
   constructor(
     private api: Vendas,
@@ -25,14 +28,31 @@ export class UsuarioListPage implements OnInit {
     this.listar();
   }
 
-  listar(id:number=0){
-    this.api.operacao({requisicao: 'usuario-listar'}).subscribe(
+  listar(id:number=0, event?:any, atualizar: boolean=false){
+
+    if(atualizar){
+      this.start = 0;
+      this.usuarios = [];
+    }
+
+    this.api.operacao({requisicao: 'usuario-listar', limit: this.limit, start: this.start, nome: this.palavra}).subscribe(
       (res:any)=> {
         if (res.success){
-          this.usuarios = res.data;
+          this.usuarios = [...this.usuarios, ...res.data];
+          this.start += this.limit
+        }
+        event.target.complete();
+        if(res.data.length < this.limit && event?.disabled !=== undefined){
+          event.target.disabled = true;
         }
       }
     );
+  }
+
+ // função barra de pesquisa
+  buscar(event:any){
+    this.palavra = event.target.value.toLowerCase();
+    this.listar();
   }
 
   editar(id:number){
