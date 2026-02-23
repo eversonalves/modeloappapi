@@ -1,27 +1,22 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="ion-text-center">Imagem do Produto</ion-title>
-      <ion-buttons slot="start">
-        <ion-back-button><ion-icon name="arrow-back-sharp"></ion-icon></ion-back-button>
-      </ion-buttons>
+    <ion-buttons slot="start">
+      <ion-back-button
+        ><ion-icon name="arrow-back-sharp"></ion-icon
+      ></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-no-padding" [fullscreen]="true">
-
+<ion-content class="ion-no-padding">
   <ion-button expand="full" (click)="tirarFoto()">
     Adicionar ou substituir imagem
   </ion-button>
+  
+    <ion-img *ngIf="preview" [src]="preview"></ion-img>
 
-  <ion-img *ngIf="preview" [src]="preview"></ion-img>
-
-  <ion-button
-    expand="full"
-    color="success"  
-    (click)="enviar()"
-    [disabled]="!imagemFile" 
-    >
+  <ion-button expand="full" color="success" [disabled]="!imagemFile" (click)="enviar()">
     Enviar
   </ion-button>
-  
 </ion-content>
