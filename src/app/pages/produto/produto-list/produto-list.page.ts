@@ -6,7 +6,7 @@ import { Vendas } from 'src/app/services/vendas';
   selector: 'app-produto-list',
   templateUrl: './produto-list.page.html',
   styleUrls: ['./produto-list.page.scss'],
-  standalone: false,
+  standalone: false
 })
 export class ProdutoListPage implements OnInit {
 
@@ -56,6 +56,12 @@ export class ProdutoListPage implements OnInit {
   // scroll infinito (carrega mais)
   carregaMais(event:any){
     this.listar(event, false);
+  }
+
+  // função barra de pesquisa
+  buscar(event:any){
+    this.palavra = event.target.value.toLowerCase();
+    this.listar(null, true);
   }
 
   abrirDetalhes(id:number){

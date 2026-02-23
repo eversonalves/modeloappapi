@@ -9,6 +9,8 @@
 
 <ion-content [fullscreen]="true">
 
+  <ion-searchbar animated="true" placeholder="Buscar" [debounce]="500" (ionInput)="buscar($event)"></ion-searchbar>
+
   <!-- Recarregar a pagina -->
 
   <ion-refresher slot="fixed" (ionRefresh)="atualizar($event)">
