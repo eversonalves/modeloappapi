@@ -12,4 +12,10 @@
   <!-- Barra de pesguisa -->
   <ion-searchbar placeholder="Buscar" [debounce]="500" (ionInput)="($event)"></ion-searchbar>
 
+  <!-- Lista de endereços -->
+   <ion-item *ngFor="let e of enderecos">
+    <ion-label>
+    </ion-label>
+   </ion-item>
+
 </ion-content>

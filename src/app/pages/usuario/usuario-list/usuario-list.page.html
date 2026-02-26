@@ -9,8 +9,10 @@
 
 <ion-content class="ion-padding" [fullscreen]="true">
 
-  <!-- Lista de usuários -->
+  <!-- Barra de pesguisa -->
+  <ion-searchbar placeholder="Buscar" [debounce]="500" (ionInput)="($event)"></ion-searchbar>
 
+  <!-- Lista de usuários -->
   <ion-item *ngFor="let u of usuarios" (click)="editar(u.id)">
     <ion-label>
       <h2> {{u.nome}} </h2>
