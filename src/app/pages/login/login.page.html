@@ -1,24 +1,32 @@
-<ion-content class="ion-padding" [fullscreen]="true"]>
-  <form [formGroup]="form" (ngSubmit)="logar()">
+<ion-content class="ion-padding" [fullscreen]="true" ]>
+  <div class="login">
+    <form [formGroup]="form" (ngSubmit)="logar()">
+      <h2>Login</h2>
 
-  <!-- Campo e-mail -->
-  <ion-item class="ion-no-border">
-    <ion-label position="floating"> E-mail </ion-label>
-    <ion-input formControlName="usuario"></ion-input>
-  </ion-item>
+      <!-- Campo e-mail -->
+      <div class="email">
+        <ion-item class="input-email">
+          <ion-label position="floating"> E-mail </ion-label>
+          <ion-input formControlName="usuario"></ion-input>
+        </ion-item>
+      </div>
 
-  <!-- Campo senha -->
-
-  <ion-item>
-    <ion-label position="floating"> Senha </ion-label>
-    <ion-input type="password" formControlName="senha"></ion-input>
-  </ion-item>
-
-  <!-- Botão entrar -->
-
-  <ion-button class="ion-padding" (click)="logar()" expand="block" color="primary" type="submit" [disabled]="form.invalid">
-    Logar
-  </ion-button>
-  
-</form>
+      <!-- Campo senha -->
+      <div class="senha">
+        <ion-item class="input-senha">
+          <ion-label position="floating"> Senha </ion-label>
+          <ion-input type="password" formControlName="senha"></ion-input>
+        </ion-item>
+      </div>
+      
+      <!-- Botão entrar -->
+      <ion-button class="btn-logar"
+        (click)="logar()"
+        type="submit"
+        [disabled]="form.invalid"
+      >
+        Logar
+      </ion-button>
+    </form>
+  </div>
 </ion-content>
